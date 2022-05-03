@@ -49,8 +49,8 @@ func (s *Server) runHealthcheckLoop(ctx context.Context, done chan<- struct{}) {
 			continue
 		}
 
-		// Success, check again in 5 seconds
-		const period = 5 * time.Second
+		// Success, check again in 120 seconds
+		const period = 120 * time.Second
 		timer := time.NewTimer(period)
 		select {
 		case <-ctx.Done():
